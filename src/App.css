@@ -24,6 +24,8 @@ body{
   display: flex;
 }
 
+
+
 .header_nav_logo{
   color: #101010;
   font-family: Montserrat;
@@ -43,6 +45,7 @@ body{
   line-height: normal;
   list-style: none;
   margin-left: 45px;
+  margin-right: 20px;
 }
 
 .header_nav_accordion .apple{
@@ -61,8 +64,8 @@ body{
 
 .phone_selection{
   position: absolute;
-  width: 240px;
-  height: 130px;
+  max-width: 235px;
+  padding-bottom: 10px;
   flex-shrink: 0;
   border-radius: 0px 0px 30px 30px;
   background: #EAEAEA;
@@ -72,8 +75,6 @@ body{
 
 
 .header_nav_widget  {
-  position: absolute;
-  right: 165px;
   display: flex;
   gap:45px;
 }
@@ -104,9 +105,7 @@ body{
   background-color: #FFA542;
   text-align: center;
   border-radius: 50%;
-  position: absolute;
-  top: -10px;
-  left: 15px;
+  float: right;
 
 }
 
@@ -124,9 +123,11 @@ body{
   background-color: #FFA542;
   text-align: center;
   border-radius: 50%;
-  position: absolute;
-  top: -10px;
-  left: 80px;
+}
+
+.widgetFavorites_ps svg,.widget_ps svg{
+  margin-top: 7px;
+  float: right;
 }
 
 .catalog_fon{
@@ -154,6 +155,8 @@ body{
   font-weight: 600;
   line-height: normal;
   padding-top: 55px;
+  padding-left: 20px;
+  padding-right: 20px;
   width: 100%;
 }
 
@@ -188,7 +191,7 @@ body{
 }
 
 .card h3{
-  max-width: 410px;
+  max-width: 310px;
   height: 315px;
   background-image: url(./pages/img/Illustration.png);
   background-repeat: no-repeat;
@@ -211,7 +214,8 @@ body{
   font-style: normal;
   font-weight: 600;
   line-height: normal;
-  width: 540px;
+  max-width: 540px;
+  width: 100%;
   height: 65px;
   flex-shrink: 0;
   border-radius: 20px;
@@ -232,7 +236,6 @@ body{
   margin-top: 30px;
   margin-bottom: 30px;
 }
-
 
 
 
@@ -286,12 +289,7 @@ body{
   margin-left: 15px;
   margin-top: 15px;
   margin-bottom: 20px;
-  /* color: #1C1C27; */
-  /* font-family: Montserrat; */
   font-size: 17px;
-  /* font-style: normal;
-  font-weight: 600;
-  line-height: normal; */
 }
 
 .footer_contact_map iframe{
@@ -344,7 +342,6 @@ body{
 
 .footer_servis_all{
   margin-top: 40px ;
-  /* margin-bottom: 40px; */
   background: #EAEAEA;
 }
 
@@ -378,4 +375,54 @@ body{
   line-height: normal;
   margin-left: 40px;
   padding-bottom: 15px;
+}
+
+
+@media (max-width: 2560px) {
+  .mobil{
+    display: none;
+  }
+}
+
+@media (max-width: 940px) {
+  .footer{
+    display: inline;
+  }
+
+  .footer li{
+    text-align: center;
+  }
+
+  .footer_social{
+    text-align: center;
+  }
+
+
+  .footer_language {
+    display: none;
+  }
+}
+
+
+@media (max-width: 680px) {
+  .header_nav_accordion{
+    display: none;
+  }
+
+  .widgetFavorites{
+    display: none;
+  }
+  
+  .mobil{
+    float: right;
+    display: block;
+    color: #838383;
+
+  }
+
+  .mobil li{
+    list-style: none;
+  }
+
+  
 }

@@ -9,6 +9,7 @@ import { SlSocialVkontakte } from "react-icons/sl";
 import { SlSocialInstagram } from "react-icons/sl";
 import { PiTelegramLogoLight } from "react-icons/pi";
 import { FaViber } from "react-icons/fa";
+import { HiOutlineQueueList } from "react-icons/hi2";
 
 
 const Header = () => {
@@ -44,8 +45,23 @@ const Header = () => {
                         </div>
                     
                         <div className="header_nav_widget">
-                            <div><WidgetFavorites/></div>
+                            <div className="widgetFavorites"><WidgetFavorites/></div>
                             <div ><Widget/></div> 
+                            <div className="mobil">
+                                <div><HiOutlineQueueList icon={['fal', 'code']} size="30px" onClick={() => setcw1((cw1 =    !cw1))} /></div>
+                                {cw1 && (
+                                <div className="phone_selection">
+                                    <div className="apple"><Link to={"/catalog"}>Apple</Link></div>
+                                <ul>
+                                    <li onClick={() => switchLokate('/product/:id')}>iPhone 12 </li>
+                                    <li onClick={() => switchLokate('/product/:id')}>iPhone 12 Max</li>
+                                    <li onClick={() => switchLokate('/product/:id')}>iPhone 13</li>
+                                    <li onClick={() => switchLokate('/product/:id')}>iPhone 13 Pro Max</li>
+                                    <li onClick={() => switchLokate('/product/:id')}>iPhone 14</li>
+                                </ul>
+                                </div>
+                                )}
+                            </div>
                         </div>
                         
                        
