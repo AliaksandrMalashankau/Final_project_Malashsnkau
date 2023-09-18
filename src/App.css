@@ -203,10 +203,6 @@ body{
   
 }
 
-.product_item:hover{
-  transform: scale(1.1);
-  transition: 0.5s;
-}
 
 .product_item img{
   width: 150px ;
