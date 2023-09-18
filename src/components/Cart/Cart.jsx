@@ -3,6 +3,8 @@ import { CardContext } from "../../App";
 import { Link } from "react-router-dom";
 import styles from "./Cart.module.scss";
 import classNames from "classnames";
+import { BsHeart } from "react-icons/bs";
+
 
 const Cart = (props) => {
     const { id, title, price, image, description: desc } = props.data;
@@ -10,7 +12,7 @@ const Cart = (props) => {
     const { card, setCard } = useContext(CardContext);
     const [added, setAdded] = useState(false);
 
-    // console.log(classNames);
+    
     const mainClass = classNames(styles.product_cart, className);
 
     const addToCard = () => {
@@ -56,6 +58,7 @@ const Cart = (props) => {
 
     return (
         <div className="product_item">
+            <div className="product_item_bsheart"><BsHeart icon={['fal', 'code']} size="20px" onClick={addToCard}/></div>
             <div
                 className="img"
                 // style={{
@@ -78,7 +81,7 @@ const Cart = (props) => {
                 <Link to={`/product/${id}`}>{title}</Link>
             </h2>
             <p className="desc">{desc}</p>
-            <span>{price}</span>
+            <span>{price} $</span>
             <div className="buttons">
                 {added && (
                     <div className="buttons__added">
@@ -87,12 +90,13 @@ const Cart = (props) => {
                             <input type="text" value={card.get(id).count} />
                             <button onClick={() => productCounter(0)}>-</button>
                         </div>
-                        <button onClick={removeInCard}>Remove</button>
+                        <button className="add_to_card" onClick={removeInCard}>удалить из корзины</button>
                     </div>
                 )}
-                {!added && <button onClick={addToCard}>Add to card</button>}
+                {!added && <button className="add_to_card" onClick={addToCard}>добавить в корзину</button>}
             </div>
         </div>
+        
     );
 };
 

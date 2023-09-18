@@ -26,7 +26,7 @@ const Header = () => {
             <header>   
                 <div className="container"> 
                     < div className="header_nav">
-                        <div className="header_nav_logo">QPICK</div>  
+                        <div className="header_nav_logo"><Link to={"/catalog"}>QPICK</Link></div>  
 
                         <div className="header_nav_accordion">
                             <div><BsPhone/> Выбрать модель телефона <IoMdArrowDropdown onClick={() => setcw1((cw1 =    !cw1))} /></div>
@@ -70,7 +70,7 @@ const Header = () => {
                     <Outlet />
                     
                     <div className="footer">  
-                        <div className="header_nav_logo">QPICK</div>                       
+                        <div className="header_nav_logo"><Link to={"/catalog"}>QPICK</Link></div>                       
                         <div className="footer_wwl">
                             <li>
                                 <Link to="/cardFavorites">Избранное</Link>

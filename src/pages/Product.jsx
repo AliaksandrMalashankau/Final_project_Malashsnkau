@@ -1,6 +1,8 @@
 import { useParams } from "react-router";
 import { useEffect, useState } from "react";
 import { getProduct } from "../utils/getData";
+import { Link} from "react-router-dom";
+import { AiOutlineStar } from "react-icons/ai";
 
 const Product = () => {
     const [product, setProduct] = useState(null);
@@ -17,32 +19,32 @@ const Product = () => {
             data();
         }
     }, [product]);
-
+    
     return (
         <div className="container">
             {!product && <h2>Loading...</h2>}
             {product && (
                 <div className="product__main">
-                    <div>x</div>
                     <div
                         className="img"
-                        style={{
-                            width: 400,
-                            marginLeft: 150
-                        }}
+                        // style={{
+                        //     width: 400,
+                        //     marginLeft: 150
+                        // }}
                     >
                         <img
                             src={product.image}
                             alt={product.title}
-                            style={{
-                                width: "100%",
-                            }}
+                            // style={{
+                            //     width: "100%",
+                            // }}
                         />
                     </div>
-                    <span className="ratin">{product.rating.rate}</span>
+                    <span className="rating"> <AiOutlineStar/>    {product.rating.rate}</span>
+                    <span className="price">{product.price} $</span>
                     <h2 className="title">{product.title}</h2>
                     <p className="desc">{product.description}</p>
-                    <span className="price">{product.price}</span>
+                    <button className="button_card"><Link to={"/catalog"}>В каталог товаров</Link></button>
                 </div>
             )}
         </div>
