@@ -1,25 +1,26 @@
 import { useState, useContext, useEffect } from "react";
-import { CardContext } from "../App";
 import CartFavorites from "../components/Cart/CartFavorites";
 import { BsHeart } from "react-icons/bs";
 import { Link} from "react-router-dom";
+import { FavoriteContext } from "../App";
 
 const CardFavorites = () => {
-    const { card, setCard } = useContext(CardContext);
+    const { fav, setFav } = useContext(FavoriteContext);
     const [cardArr, setCardArr] = useState([]);
 
     useEffect(() => {
-        if (card.size) {
-            const keys = card.keys();
+        if (fav.size) {
+            const keys = fav.keys();
             const newCard = [];
             for (let key of keys) {
-                newCard.push(card.get(key));
+                newCard.push(fav.get(key));
             }
             setCardArr(newCard);
         }
-    }, [JSON.stringify(cardArr), card]);
+    }, [JSON.stringify(cardArr), fav]);
 
     return (
+        
         <div className="cartfavorites">
             {!cardArr.length && <h3><BsHeart icon={['fal', 'code']} size="90px"/></h3>}
             {!cardArr.length && <h2> Избранное пусто</h2>}
