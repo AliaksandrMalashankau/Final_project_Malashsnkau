@@ -8,6 +8,7 @@ import Header from './components/Header/Header';
 import Product from './pages/Product';
 import Card from './pages/Card';
 import CardFavorites from './pages/CardFavorites';
+import Decor from './pages/Decor';
 
 
 export const CardContext = createContext(null);
@@ -34,6 +35,7 @@ function App() {
             <Route path='/service' element={<Service />} />
             <Route path='/card' element={<Card />} />
             <Route path='/cardFavorites' element={<CardFavorites />} />
+            <Route path='/decor' element={<Decor />} />
           </Route>
         </Routes>
         </FavoriteContext.Provider>

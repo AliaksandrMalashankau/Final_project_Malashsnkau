@@ -15,12 +15,13 @@ import { HiOutlineQueueList } from "react-icons/hi2";
 const Header = () => {
     let [cw1, setcw1] = useState(false);
     const location = useNavigate();
+    const [product, setProduct] = useState(null);
 
     const switchLokate = (category) => {
         // setFilter(category);
         location('/catalog');
     }
-
+        
     return (
         <>
             <header>   

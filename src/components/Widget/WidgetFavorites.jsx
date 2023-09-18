@@ -19,15 +19,15 @@ const WidgetFavorites = () => {
     }, [fav, JSON.stringify(price)]);
 
     return (
-        // <div className="widgetFavorites">
-            <Link to={"/cardFavorites"}>
-                <div className="widgetFavorites_ps">
-                    <div><BsHeart icon={['fal', 'code']} size="20px"/></div>
-                    <div className="widgetFavorites_ps_size">{fav.size}</div>
-                </div>
-                
-            </Link>
-        // </div>
+        
+        <Link to={"/cardFavorites"}>
+            <div className="widgetFavorites_ps">
+                <div><BsHeart icon={['fal', 'code']} size="20px"/></div>
+                <div className="widgetFavorites_ps_size">{fav.size}</div>
+            </div>
+            
+        </Link>
+    
     );
 };
 

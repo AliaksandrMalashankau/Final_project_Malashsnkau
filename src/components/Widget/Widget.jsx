@@ -20,14 +20,14 @@ const Widget = () => {
     }, [card, JSON.stringify(price)]);
 
     return (
-        // <div className="widget">
-            <Link to={"/card"}>
-                <div className="widget_ps">
-                    <div><FaCartShopping icon={['fal', 'code']} size="20px"/></div>
-                    <div className="widget_ps_size">{card.size}</div>
-                </div>
-            </Link>
-        // </div>
+        
+        <Link to={"/card"}>
+            <div className="widget_ps">
+                <div><FaCartShopping icon={['fal', 'code']} size="20px"/></div>
+                <div className="widget_ps_size">{card.size}</div>
+            </div>
+        </Link>
+        
     );
 };
 

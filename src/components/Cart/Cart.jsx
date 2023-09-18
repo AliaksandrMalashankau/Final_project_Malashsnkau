@@ -91,9 +91,12 @@ const Cart = (props) => {
                             <button onClick={() => productCounter(0)}>-</button>
                         </div>
                         <button className="add_to_card" onClick={removeInCard}>удалить из корзины</button>
+                        {/* <button><Link to="/decor">Оформить</Link> </button> */}
                     </div>
                 )}
                 {!added && <button className="add_to_card" onClick={addToCard}>добавить в корзину</button>}
+                
+
             </div>
         </div>
         
